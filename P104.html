@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P104</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>¿Cuánto fue el consumo del cliente?</h3>
+    <input type="number" id="consumo" oninput="calcular()">
+    <h2 id="total"></h2>
+    <script>
+        document.title = "hola"
+        function calcular() {
+            consumo = document.getElementById("consumo").value
+            if (consumo <= 100) {
+                total = (consumo - (consumo * 0.10)) * 1.16;
+            } else if (consumo <= 200) {
+                total = (consumo - (consumo * 0.12)) * 1.16;
+            } else {
+                total = (consumo - (consumo * 0.30)) * 1.16;
+            }
+            total = Math.round(total * 100)/100
+            document.getElementById("total").innerHTML = "El total fue de $"+total+" pesos"
+        }   
+    </script>
+</body>
+
+</html>
